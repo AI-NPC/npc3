@@ -1,5 +1,5 @@
-import { NPC3 } from '../class/NPC3';
-import { NPC3_CONFIG } from '../config/npc3';
+import { NPC3 } from '../NPC3';
+import { NPC3_CONFIG } from './config/npc3';
 
 test('NPC3', async () => {
   let npc3 = new NPC3({ configuration: NPC3_CONFIG });

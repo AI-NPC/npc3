@@ -1,7 +1,7 @@
 import { OpenAIApi, Configuration } from 'openai';
-import { NPC3Config } from '../types/types';
+import { NPC3Config } from './NPC3Config';
 
-class NPC3 {
+export class NPC3 {
   ai: OpenAIApi;
   config: NPC3Config;
 
@@ -31,5 +31,3 @@ class NPC3 {
     return ouptut;
   }
 }
-
-export { NPC3 };
