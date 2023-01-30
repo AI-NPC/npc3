@@ -1,5 +1,5 @@
 {
-  "name": "npc3",
+  "name": "@ai-npc/npc3",
   "version": "0.0.1",
   "description": "npc-3 - A GPT-3 based NPC Dialogue Generation API for Games",
   "main": "src/index.ts", 
