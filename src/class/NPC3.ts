@@ -32,4 +32,4 @@ class NPC3 {
   }
 }
 
-export default NPC3;
+export { NPC3 };
