@@ -1,0 +1,27 @@
+{
+  "name": "npc3",
+  "version": "0.0.1",
+  "description": "npc-3 - A GPT-3 based NPC Dialogue Generation API for Games",
+  "main": "src/index.ts", 
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-specifier-resolution=node --loader ts-node/esm ./src/test/npc3.spec.ts",
+    "start": "node --experimental-specifier-resolution=node --loader ts-node/esm ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AI-NPC/npc3.git"
+  },
+  "author": "oscarmac",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AI-NPC/npc3/issues"
+  },
+  "homepage": "https://github.com/AI-NPC/npc3#readme",
+   "devDependencies": {
+    "openai": "^3.1.0",
+    "prettier": "^2.8.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  }
+}
