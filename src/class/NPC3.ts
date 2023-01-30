@@ -1,18 +1,16 @@
-import { OpenAIApi, Configuration } from "openai";
-import { NPC3Config } from "../types/types";
+import { OpenAIApi, Configuration } from 'openai';
+import { NPC3Config } from '../types/types';
 
-export class NPC3 {
+class NPC3 {
   ai: OpenAIApi;
   config: NPC3Config;
 
   constructor({ configuration }: { configuration: NPC3Config }) {
     this.config = configuration;
-    this.ai = new OpenAIApi(
-      new Configuration(configuration.openAi.configuration)
-    );
+    this.ai = new OpenAIApi(new Configuration(configuration.openAi.configuration));
   }
 
-  async generateAnswer(prompt: string) {
+  async generateAnswer({ prompt }: { prompt: string }) {
     let ouptut: string | undefined;
     try {
       const completion = await this.ai.createCompletion({
@@ -33,3 +31,5 @@ export class NPC3 {
     return ouptut;
   }
 }
+
+export default NPC3;

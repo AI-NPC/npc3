@@ -1,4 +1,4 @@
-export type NPC3Config = {
+type NPC3Config = {
   openAi: {
     configuration: {
       apiKey: string;
@@ -8,3 +8,5 @@ export type NPC3Config = {
     };
   };
 };
+
+export { NPC3Config };
