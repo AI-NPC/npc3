@@ -5,9 +5,25 @@ export class NPC3 {
   ai: OpenAIApi;
   config: NPC3Config;
 
-  constructor({ configuration }: { configuration: NPC3Config }) {
-    this.config = configuration;
-    this.ai = new OpenAIApi(new Configuration(configuration.openAi.configuration));
+  constructor({ openaiAPIKey }: { openaiAPIKey: string }) {
+    this.config = {
+      openAi: {
+        configuration: {
+          apiKey: openaiAPIKey,
+        },
+        completion: {
+          model: 'text-davinci-003',
+          max_tokens: 300,
+          temperature: 1,
+          top_p: 1,
+          n: 1,
+          stream: false,
+          logprobs: null,
+          stop: '}',
+        },
+      },
+    };
+    this.ai = new OpenAIApi(new Configuration(this.config.openAi.configuration));
   }
 
   async generateAnswer({ prompt }: { prompt: string }) {
