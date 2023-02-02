@@ -14,4 +14,8 @@ export type NPC3Config = {
       stop: string;
     };
   };
+  logs: {
+    prompt: boolean;
+    output: boolean;
+  };
 };
