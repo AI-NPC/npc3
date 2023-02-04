@@ -1,6 +1,6 @@
 export type GameContext = {
-  settings: string;
+  setting: string;
   tone: string;
   objectives: string[];
-  settingsDetails: string[];
+  details: string[];
 };

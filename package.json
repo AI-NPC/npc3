@@ -1,25 +1,34 @@
 {
   "name": "@ai-npc/npc3",
-  "version": "0.0.23",
+  "version": "0.0.26",
   "description": "npc-3 - A GPT-3 based NPC Dialogue Generation API for Games",
-   "main": "lib/index.js",
-   "types": "lib/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm test && npm run lint",
-    "preversion" : "npm run lint",
-    "version" : "npm run format && git add -A src",
-    "postversion" : "git push && git push --tags"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AI-NPC/npc3.git"
   },
-  "keywords": ["AI", "NPC", "Gaming", "GPT-3", "OpenAI", "Dialogue", "Generation", "API"],
+  "keywords": [
+    "AI",
+    "NPC",
+    "Gaming",
+    "GPT-3",
+    "OpenAI",
+    "Dialogue",
+    "Generation",
+    "API"
+  ],
   "author": "oscarmac",
   "license": "MIT",
   "bugs": {
@@ -29,7 +38,6 @@
   "devDependencies": {
     "@types/jest": "^29.4.0",
     "jest": "^29.4.1",
-    "openai": "^3.1.0",
     "prettier": "^2.8.3",
     "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1",
@@ -39,5 +47,8 @@
   },
   "files": [
     "/lib/**/**/*"
-  ]
+  ],
+  "dependencies": {
+    "openai": "^3.1.0"
+  }
 }

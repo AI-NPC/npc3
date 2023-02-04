@@ -67,6 +67,7 @@ export class NPC3 {
       for (const line of lines) {
         if (line.length > 0) {
           const [name, description] = line.split(';');
+          if (!name || !description) throw new Error('No name or description');
           npcs.push({ name: name, description: description });
         }
       }

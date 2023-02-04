@@ -7,10 +7,10 @@ export const GAME_CONTEXT_PROMPT = (gameContext: GameContext): string => {
     if (arr.length === 2) return arr.join(' and ');
     return arr.slice(0, -1).join(', ') + ', and ' + arr.slice(-1);
   };
-  return `${gameContext.settings} game set in a ${
+  return `${gameContext.setting} game set in a ${
     gameContext.tone
   } world where the player's main objectives are ${format(gameContext.objectives)}. The game setting involves ${format(
-    gameContext.settingsDetails,
+    gameContext.details,
   )}`;
 };
 
