@@ -7,15 +7,16 @@ export const GAME_CONTEXT_PROMPT = (gameContext: GameContext): string => {
     if (arr.length === 2) return arr.join(' and ');
     return arr.slice(0, -1).join(', ') + ', and ' + arr.slice(-1);
   };
-  return `${gameContext.setting} game set in a ${
-    gameContext.tone
-  } world where the player's main objectives are ${format(gameContext.objectives)}. The game setting involves ${format(
-    gameContext.details,
-  )}`;
+  return `----Game Context
+  ${gameContext.setting} game set in a ${gameContext.tone} world where the player's main objectives are ${format(
+    gameContext.objectives,
+  )}. The game setting involves ${format(gameContext.details)}`;
 };
 
 export const NPC_CONTEXT_PROMPT = (gameContext: GameContext, npc: NPC) =>
-  `You are a NPC inside a ${GAME_CONTEXT_PROMPT(gameContext)}. Your name is ${npc.name}. ${npc.description}`;
+  `${GAME_CONTEXT_PROMPT(gameContext)}
+  ----NPC Context
+  You are a NPC inside the game. Your name is ${npc.name}. ${npc.description}`;
 
 export const TWO_NPCS_PROMPT = (
   gameContext: GameContext,
@@ -30,7 +31,7 @@ export const APPROACH_NPC_PROMPT = (npc: NPC, gameContext: GameContext) => `${NP
   gameContext,
   npc,
 )} A player approaches...
-You are to write the NPC first sentence to the player as well as 3 choice the player can choose as a reply.
+You are to write the NPC first sentence to the player as well as 3 choice the player can choose as a reply to improve the user experience following the game context.
 Desired output format, nothing else:
 NPC)<npc_first_sentence>
 A)<user_choice1>
@@ -46,11 +47,12 @@ export const DISCUSS_NPC_PROMPT = (gameContext: GameContext, npc: NPC, history: 
     }
     return formattedString;
   };
-  return `${NPC_CONTEXT_PROMPT(gameContext, npc)} The dicussion history is as follow:
----
+  return `${NPC_CONTEXT_PROMPT(gameContext, npc)}
+
+---- Discussion Context
 ${format(history)}
----
-You are to write the NPC answer to the player as well as 3 choice the player can choose as a reply.
+
+You are to write the NPC answer to the player as well as 3 choice the player can choose as a reply to improve the user experience following the game context.
 Desired output format, nothing else:
 NPC)<npc_answer>
 A)<user_choice1>
